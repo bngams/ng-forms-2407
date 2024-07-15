@@ -1,0 +1,10 @@
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button *ngFor="let item of iconMenuItems" [routerLink]="item.path" mat-icon-button class="example-icon" aria-label="item.desc">
+    <mat-icon>{{ item.icon }}</mat-icon>
+  </button>
+</mat-toolbar>
