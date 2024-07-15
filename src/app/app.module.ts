@@ -16,6 +16,13 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import {
+  MatSlideToggleModule,
+  _MatSlideToggleRequiredValidatorModule,
+} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -31,7 +38,8 @@ import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatToolbarModule, MatButtonModule, MatIconModule, MatTabsModule, MatCardModule
+    ReactiveFormsModule,
+    MatToolbarModule, MatButtonModule, MatIconModule, MatTabsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, _MatSlideToggleRequiredValidatorModule
   ],
   providers: [
     provideAnimationsAsync()

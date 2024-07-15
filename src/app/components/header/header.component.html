@@ -7,4 +7,5 @@
   <button *ngFor="let item of iconMenuItems" [routerLink]="item.path" mat-icon-button class="example-icon" aria-label="item.desc">
     <mat-icon>{{ item.icon }}</mat-icon>
   </button>
+  <span *ngIf="authService.isLoggedIn">Logout => </span>
 </mat-toolbar>

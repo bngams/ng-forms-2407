@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './sign-up-form.component.scss'
 })
 export class SignUpFormComponent {
-
+  @Input() simpleMode: boolean | null = false;
 }
