@@ -11,12 +11,12 @@ export class HeaderComponent {
 
   iconMenuItems: IconMenuItems  = [
     { path: '/home', icon: 'home', desc: 'Home page'},
-    { path: '/dashboard', icon: 'dashboard', desc: 'Dashboard page'},
-    { path: '/auth', icon: 'account_circle', desc: 'Login page'}
+    { path: '/dashboard', icon: 'dashboard', desc: 'Dashboard page' },
+    { path: '/products', icon: 'store', desc: 'Store page'}
   ];
 
   // DI without constructor
-  authService: AuthService = inject(AuthService);
+  readonly authService: AuthService = inject(AuthService);
 
 
 }

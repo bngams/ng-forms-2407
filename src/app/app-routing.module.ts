@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   // in AuthModule { path: 'login', component: LoginComponent },
   { path: 'auth', loadChildren: () => import('./modules/auth/auth.module').then(result => result.AuthModule) },
+  { path: 'products', loadChildren: () => import('./modules/product/product.module').then(result => { return result.ProductModule }) },
   // last entry for 404
   { path: '**', component: NotFoundComponent },
 ];

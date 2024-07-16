@@ -4,8 +4,13 @@
   </button>
   <span>My App</span>
   <span class="example-spacer"></span>
-  <button *ngFor="let item of iconMenuItems" [routerLink]="item.path" mat-icon-button class="example-icon" aria-label="item.desc">
+  <button  mat-icon-button *ngFor="let item of iconMenuItems" [routerLink]="item.path" routerLinkActive="active" class="example-icon" aria-label="item.desc">
     <mat-icon>{{ item.icon }}</mat-icon>
   </button>
-  <span *ngIf="authService.isLoggedIn">Logout => </span>
+  <button  mat-icon-button *ngIf="!authService.isLoggedIn" routerLink="/auth" routerLinkActive="active"class="example-icon" aria-label="item.desc">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <button mat-icon-button *ngIf="authService.isLoggedIn" (click)="authService.logout()" class="example-icon" aria-label="item.desc">
+    <mat-icon>logout</mat-icon>
+  </button>
 </mat-toolbar>
