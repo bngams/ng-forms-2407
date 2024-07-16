@@ -48,7 +48,9 @@ export class ProductFormComponent {
   submit(): void {
     // let vs const
     const product: Product = this.productForm.value; // { title: value, price: value} => Product
-    // do something
+    // emit output
     this.productSubmit.emit(product);
+    // via service
+    this.productService.products.push(product);
   }
 }

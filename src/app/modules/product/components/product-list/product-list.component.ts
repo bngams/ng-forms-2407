@@ -1,12 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { Product } from '../../models/product';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
+
   @Input()
   productsInput!: Product[];
 
@@ -16,8 +18,15 @@ export class ProductListComponent {
     { title: 'Produit 3', price: 30 },
   ];
 
+  readonly productService = inject(ProductService);
+
+  ngOnInit(): void {
+    // this.productService.product$.subscribe((value) => {
+    // });
+  }
+
   addProduct(product: Product): void {
     this.products.push(product);
-    // 
+    //
   }
 }
