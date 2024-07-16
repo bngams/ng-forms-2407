@@ -1,2 +1,7 @@
-<app-product-form></app-product-form>
-<app-product-list></app-product-list>
+<app-product-form (productSubmit)="addProduct($event)"></app-product-form>
+
+<!-- Products Display With Input-->
+<!-- <app-product-list [productsInput]="productsForInput" ></app-product-list> -->
+
+<!-- Products Display-->
+<app-product-list #myProductList></app-product-list>

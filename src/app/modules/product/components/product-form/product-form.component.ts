@@ -36,7 +36,7 @@ export class ProductFormComponent {
 
   // create object form
   // untyped => new UntypedFormGroup({
-  // with type => (since angular 14/15)
+  // with type => new FormGroup (since angular 14/15)
   productForm = new UntypedFormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(3)]),
     price: new FormControl(0, [Validators.required, Validators.min(1)])
@@ -47,8 +47,8 @@ export class ProductFormComponent {
 
   submit(): void {
     // let vs const
-    const product: Product = this.productForm.value;
+    const product: Product = this.productForm.value; // { title: value, price: value} => Product
     // do something
-    console.log(product);
+    this.productSubmit.emit(product);
   }
 }
